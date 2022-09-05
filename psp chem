@@ -1,0 +1,59 @@
+#include<stdio.h>
+#include<math.h>
+float value(float Q,float T,float n)
+{
+    float Ec,Ea,E,e;
+    printf("\nenter the standard electrode potential at cathode: ");
+    scanf("%f",&Ec);
+    printf("\nenter the standard electrode potential at anode: ");
+    scanf("%f",&Ea);
+    E = Ec-Ea;
+    e=E-(((8.314*T)/(n*96500))*log(Q));
+    return e;
+}
+float value1(float Q,float T,float n)
+{
+    float E,e;
+    printf("\nenter the standard electrode potential of cell: ");
+    scanf("%f",&E);
+    e=E-(((8.314*T)/(n*96500))*log(Q));
+    return e;
+}
+float value1(float Q,float T,float n)
+{
+    float E,e;
+    printf("\nenter the standard electrode potential of cell: ");
+    scanf("%f",&E);
+    e=E-(((8.314*T)/(n*96500))*log(Q));
+    return e;
+}
+void main()
+{
+    int choice;
+    float P,Q,R,T,emf,n;
+    printf("enter the number of electrons involved in the reaction: ");
+    scanf("f",&n);
+    printf("\nenter the temperature in kelvin: ");
+    scanf("%f",&T);
+    printf("\nenter the concentration of reactants: ");
+    scanf("%f",&R);
+    printf("\nenter the concentration of products: ");
+    scanf("%f",&P);
+    Q=P/R;
+    printf("\nenter the choice(1 or 2)\n 1 for entering standard emf of cathode");
+    printf("and anode\n 2 for entering standard emf of cell\n");
+    scanf("%d",&choice);
+    switch(choice);
+    {
+      case 1: emf=value(Q,T,n);
+      printf("EMF=%fV",emf);
+      break;
+      case 2: emf=value1(Q,T,n);
+      printf("EMF = %fV",emf);
+      break;
+        
+        default : printf("invalid choice!!");
+    }
+}
+
+  
