@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int n;
+float temp=0, sqrt;
+//clrscr();
+printf("\nEnter N: \n");
+scanf("%d", &n);
+// store the half of the given number
+sqrt = n / 2;
+// Iterate until sqrt is different of temp, that is updated on the loop
+while(sqrt != temp)
+{
+temp = sqrt;
+sqrt = ( n/temp + temp) / 2;
+}
+printf("The square root of '%d' is '%.2f'", n, sqrt);
+getch();
+}
