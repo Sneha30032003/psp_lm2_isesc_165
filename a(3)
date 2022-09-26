@@ -1,0 +1,47 @@
+#include<stdio.h>
+void main()
+{
+     int a[10][10],sum=0,sm=0;
+     int i,j,m,n;
+     clrscr();
+     printf("Enter Order of Matrix : ");
+     scanf("%d%d",&m,&n);
+     if(m!=n)
+      {
+           printf("Not a Square Matrix : ");
+           getch();
+           exit();
+       }
+           printf("Enter Elements : ");
+           for(i=0;i<m;i++)
+               {
+               for(j=0;j<n;j++)
+                      {
+                          scanf("%d",&a[i][j]);
+                      }
+               }
+                  for(i=0;i<m;i++)
+                      {
+                          for(j=0;j<n;j++)
+                              {
+                                  if(i+j<m-1)
+                                    {
+                                         sum+=a[i][j];
+                                    }
+                               }
+                      }
+                          printf("\n Sum of Upper Triangle is : %d",sum);
+                          for(i=0;i<m;i++)
+                              {
+                                  for(j=0;j<n;j++)
+                                      {
+                                         if(i+j>m-1)
+                                           {
+                                                sm+=a[i][j];
+                                            }
+                                       }
+                              }
+                                   printf("\n Sum of Lower Triangle is : %d",sm);
+                                   getch();
+} 
+ 
